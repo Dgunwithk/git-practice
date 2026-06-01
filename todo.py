@@ -3,7 +3,9 @@ todo_list = []
 
 
 def add_todo(task):
-
+    if task.strip() == "":
+        print("❌ 오류: 할 일 내용이 비어 있습니다. 문자를 입력해 주세요.")
+        return
     new_item = {"task": task, "done": False}
     todo_list.append(new_item)
     print(f"'{task}'이(가) 추가되었습니다.")
