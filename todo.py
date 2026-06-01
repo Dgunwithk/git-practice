@@ -39,20 +39,14 @@ def complete_todo(index):
 
 
 def count_todos():
-    """전체 항목 수와 완료된 항목 수를 반환한다.
 
-    Returns:
-        tuple: (전체 수, 완료 수)
-
-    Example:
-        total, done = count_todos()
-        print(f"전체 {total}개 중 {done}개 완료")
-    """
     total = len(todo_list)
-    # TODO: 완료된 항목 수를 계산하세요
-    #       힌트: item["done"]이 True인 항목의 수를 세어보세요
     done = 0
+    for item in todo_list:
+        if item["done"] == True:
+            done = done + 1
     return total, done
+ 
 
 
 if __name__ == "__main__":
