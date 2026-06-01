@@ -1,31 +1,12 @@
-# todo_starter.py
-# 할 일 관리 프로그램
-#
-# 안내:
-#   1. 이 파일의 이름을 todo.py로 변경하세요.
-#   2. TODO 주석을 읽고 각 함수를 완성하세요.
-#   3. if __name__ 블록의 테스트 코드는 수정하지 마세요.
 
-# 할 일 목록을 저장하는 리스트
-# 각 항목은 딕셔너리 형태: {"task": "할 일 내용", "done": False}
 todo_list = []
 
 
 def add_todo(task):
-    """할 일 항목을 추가한다.
 
-    Args:
-        task (str): 추가할 할 일 내용
-
-    Example:
-        add_todo("파이썬 공부하기")
-        → todo_list에 {"task": "파이썬 공부하기", "done": False} 추가
-        → '파이썬 공부하기'이(가) 추가되었습니다. 출력
-    """
-    # TODO: todo_list에 새 항목을 딕셔너리로 추가하세요
-    # TODO: 추가 완료 메시지를 출력하세요
-    pass
-
+    new_item = {"task": task, "done": False}
+    todo_list.append(new_item)
+    print(f"'{task}'이(가) 추가되었습니다.")
 
 def show_todos():
     """전체 할 일 목록을 번호와 함께 출력한다.
