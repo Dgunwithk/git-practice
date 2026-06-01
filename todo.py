@@ -9,31 +9,22 @@ def add_todo(task):
     print(f"'{task}'이(가) 추가되었습니다.")
 
 def show_todos():
-    """전체 할 일 목록을 번호와 함께 출력한다.
-    완료된 항목은 [✓], 미완료는 [ ]로 표시한다.
-    목록이 비어있으면 안내 메시지를 출력한다.
-
-    출력 예시:
-        ==============================
-               할 일 목록
-        ==============================
-          1. [ ] 파이썬 과제 완료하기
-          2. [✓] Git 실습 지시서 읽기
-        ==============================
-    """
     if not todo_list:
         print("할 일이 없습니다.")
         return
-
+ 
     print("\n" + "=" * 30)
     print("       할 일 목록")
     print("=" * 30)
-
+ 
     for i, item in enumerate(todo_list, 1):
-        # TODO: 완료 여부에 따라 status를 "✓" 또는 " "로 설정하세요
-        # TODO: 번호, status, 할 일 내용을 형식에 맞게 출력하세요
-        pass
 
+        if item["done"] == True:
+            status = "✓"
+        else:
+            status = " "
+        print(f"  {i}. [{status}] {item['task']}")
+ 
     print("=" * 30)
 
 
