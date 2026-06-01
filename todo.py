@@ -29,23 +29,13 @@ def show_todos():
 
 
 def complete_todo(index):
-    """지정한 번호의 할 일을 완료 처리한다.
 
-    Args:
-        index (int): 완료 처리할 항목 번호 (1부터 시작)
-
-    Note:
-        올바르지 않은 번호가 입력되면 안내 메시지를 출력하고 종료한다.
-        힌트: 사용자에게 보여주는 번호는 1부터 시작하지만
-              리스트 인덱스는 0부터 시작합니다.
-    """
-    # TODO: index가 유효한 범위인지 확인하고
-    #       범위를 벗어나면 안내 메시지 출력 후 return하세요
-
-    # TODO: 해당 항목의 "done" 값을 True로 변경하세요
-
-    # TODO: 완료 메시지를 출력하세요
-    pass
+    if index < 1 or index > len(todo_list):
+        print("올바르지 않은 번호입니다.")
+        return
+    todo_list[index - 1]["done"] = True
+    task = todo_list[index - 1]["task"]
+    print(f"'{task}'을 완료했습니다.")
 
 
 def count_todos():
